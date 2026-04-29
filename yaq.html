@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>portfolio website</title>
+
+<style>
+        :root {
+            --bg-deep: #0f172a;
+            --bg-card: #1e293b;
+            --accent-primary: #38bdf8;
+            --accent-secondary: #7dd3fc;
+            --text-white: #f8fafc;
+            --text-muted: #94a3b8;
+            --nav-bg: #020617;
+        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background: #4a0303f4;
+    padding: 15px 30px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+nav a {
+    color: #9b8400;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    min-height: 100vh;
+    background: url('/photo.jpg') no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #9b8400;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+.hero p {
+    font-size: 45px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    border-left: 2px solid #9b8400;
+    display: inline-block;
+    padding-left: 8px;
+    min-height: 30px;
+}
+#cursor {
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background: #f5f1f1f4;
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: blink 0.6s step-start infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+.hero button {
+    padding: 10px 24px;
+    border: none;
+    color: #9b8400;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.2s;
+}
+.hero button:hover {
+    background: #9b8400;
+    color: #4a0303f4;
+
+}
+
+.about {
+    background: #016b60;
+    padding: 100px 50px;
+    text-align: center;
+}
+.about h2 {
+    font-size: 35px;
+    margin-bottom: 35px;
+    color: #4a0303f4;
+}
+.about-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: auto;
+    text-align: left;
+}
+.about img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.about-text {
+    max-width: 450px;
+    line-height: 1.7;
+    color: #4a0303f4;
+    font-size: 15px;
+    padding-top: 10px;
+}
+.about-text a {
+    color: #000000;
+}
+
+.services {
+    background: #175c8e;
+    padding: 100px 40px;
+}
+.services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 35px;
+    color: #4a0303f4;
+}
+.service-box {
+    max-width: 600px;
+    margin: auto;
+}
+.service {
+    margin: 25px 0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+
+}
+.service-icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    margin-top: 3px;
+}
+.service h3 {
+    font-size: 20px;
+    color: #9b8400;
+}
+.service p {
+    font-size: 14px;
+    color: #4a0303f4;
+}
+
+.skills {
+    background: #6c4214;
+    padding: 100px 50px;
+}
+.skills h2 {
+    font-size: 35px;
+    color: #4a0303f4;
+    margin-bottom: 24px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.skills p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+    color: #9f8f35;
+    font-size: 16px;
+}
+        .bar-item { margin-bottom: 25px; }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            color: var(--text-white);
+        }
+
+        .bar-bg {
+            background: #334155;
+            height: 10px;
+            border-radius: 10px;
+        }
+
+        .bar-fill {
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            height: 100%;
+            border-radius: 10px;
+        }
+
+.contact {
+    background: #3e1818;
+    padding: 100px 50px;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: #9f8f35;
+}
+.contact-inner {
+    display: flex;
+    gap: 50px;
+    max-width: 800px;
+}
+.contact-form {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 20px;
+    background: white;
+    font-size: 15px;
+    color: #9f8f35;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    padding: 10px 22px;
+    background: #9f8f35;
+    color: #3e1818;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+.contact-form button:hover {
+    background: #3e1818;
+    color: #9f8f35;
+}
+.contact-info {
+    min-width: 200px;
+    font-size: 15px;
+    color: #481414;
+    line-height: 2;
+}
+.contact-info p.tagline {
+    color: #9f8f35;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.contact-info .info-line {
+    gap: 8px;
+    color: #9f8f35;
+}
+.contact-info .info-line span.label {
+    font-weight: bold;
+    color: #eee;
+}
+.social-icons {
+    display: flex;
+    gap: 50px;
+    margin-top: 15px;
+}
+.social-icons a {
+    color: #9f8f35;
+    font-size: 25px;
+    background: #260404;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: down;
+}
+
+footer {
+    background: #000000;
+    padding: 15px;
+    text-align: center;
+    color: #9f8f35;
+    font-size: 14px;
+}
+        .back-to-home {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            text-decoration: none;
+            z-index: 999;
+        }
+</style>
+</head>
+<body>
+
+<nav class="bg">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#service">Service</a>
+    <a href="#skill">Skill</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Hello...I am Yakut Mohammed</h1>
+        <p><span id="tw"></span><span id="cursor"></span></p>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"></button>
+        <div>
+        <a href="#contact">contact&#9993</a>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>about me</h2>
+    <div class="about-inner">
+        <img src="Yyy.jpg" alt="Yakut Mohammed">
+        <div class="about-text">
+            <br>
+                Hi my name is Yakut Mohammed. I am web development student in grade 11.<br>
+                I have a passion for learning how to building websites and create digital contents <br>
+                <a href="#">click here to look at</a> my work.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="service">
+    <h2>MY SERVICES</h2>
+    <div class="service-box">
+        <div class="service">
+            <div class="service-icon">&#128187;</div>
+            <div>
+                <h3>WEB DESIGN</h3>
+                <p>I design a website by using html, css and javascript.</p>
+            </div>
+        </div>
+        <div class="service">
+            <div class="service-icon">&#128421;</div>
+            <div>
+                <h3>VIDEO EDITING</h3>
+                <p>I create engaging videos using premiere pro</p>
+            </div>
+        </div>
+        <div class="service">
+            <div class="service-icon">&#128247;</div>
+            <div>
+                <h3>PHOTOGRAPHY</h3>
+                <p>I take photos by using my phone and edit them by using lightroom</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills" id="skill">
+    <h2>My creative Skills</h2>
+    <p>
+        I am a creative and detail-oriented digital content creator 
+    </p>
+               <div class="skills-right">
+                <div class="bar-item">
+                    <div class="bar-label"><span>in physics</span><span>80%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label"><span>History</span><span>95%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label"><span>in art</span><span>60%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label"><span>Video Editing</span><span>20%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 20%;"></div></div> 
+</section>
+
+<section class="contact" id="contact">
+    <h2>CONTACT ME</h2>
+    <div class="contact-inner">
+        <div class="contact-form">
+            <input type="text" placeholder="your name...">
+            <input type="email" placeholder="your emailaddress...">
+            <input type="text" placeholder="your subject...">
+            <textarea placeholder="message..."></textarea>
+            <button type="button">send message...</button>
+        </div>
+        <div class="contact-info">
+            <p class="tagline">please contact and support me you have to send just your subject</p>
+            <div class="info-line">&#128205; Mekanissa </div>
+            <div class="info-line">&#128222; +251-981 98 54 50</div>
+            <div class="info-line">&#128231; yaqutmohammed67@gmail.com</div>
+            <div class="social-icons">
+                <a href="#">&#9654;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Yaqut Mohammed | all right reserved</p>
+    </footer>
+    <div>
+        <a href="#home" class="back-to-home">
+        <i class="fas fa-arrow-up"></i>
+    </a
+    </div>
+<script>
+  
+  window.addEventListener('scroll', function(){
+      if(scrollY > 100){
+        document.getElementById('navbg').classList.add('bgc');
+      }
+      
+      else{
+        document.getElementById('navbar').classList.remove('bgc');
+        
+      }
+    });
+var txt = "A Natural science student";
+var el = document.getElementById("tw");
+var pos = 0;
+var typing = true;
+
+function run() {
+    if (typing) {
+        if (pos < txt.length) {
+            el.textContent += txt[pos];
+            pos++;
+            setTimeout(run, 95);
+        } else {
+            setTimeout(function(){ typing = false; run(); }, 2000);
+        }
+    } else {
+        if (el.textContent.length > 0) {
+            el.textContent = el.textContent.slice(0, -1);
+            setTimeout(run, 55);
+        } else {
+            pos = 0;
+            typing = true;
+            setTimeout(run, 600);
+        }
+    }
+}
+
+run();
+</script>
+</body>
+</html>
